@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E442D8492CA1736B00D99724 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E442D8482CA1736B00D99724 /* RxCocoa */; };
+		E442D84B2CA1736B00D99724 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E442D84A2CA1736B00D99724 /* RxSwift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E442D82A2CA1732000D99724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E442D80B2CA1731F00D99724 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E442D8122CA1731F00D99724;
+			remoteInfo = "Rick & Roll";
+		};
+		E442D8342CA1732000D99724 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E442D80B2CA1731F00D99724 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E442D8122CA1731F00D99724;
+			remoteInfo = "Rick & Roll";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E442D8132CA1731F00D99724 /* Rick & Roll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick & Roll.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E442D8292CA1732000D99724 /* Rick & RollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick & RollTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E442D8332CA1732000D99724 /* Rick & RollUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick & RollUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E442D83B2CA1732000D99724 /* Exceptions for "Rick & Roll" folder in "Rick & Roll" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E442D8122CA1731F00D99724 /* Rick & Roll */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E442D8152CA1731F00D99724 /* Rick & Roll */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E442D83B2CA1732000D99724 /* Exceptions for "Rick & Roll" folder in "Rick & Roll" target */,
+			);
+			path = "Rick & Roll";
+			sourceTree = "<group>";
+		};
+		E442D82C2CA1732000D99724 /* Rick & RollTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Rick & RollTests";
+			sourceTree = "<group>";
+		};
+		E442D8362CA1732000D99724 /* Rick & RollUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Rick & RollUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E442D8102CA1731F00D99724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E442D84B2CA1736B00D99724 /* RxSwift in Frameworks */,
+				E442D8492CA1736B00D99724 /* RxCocoa in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E442D8262CA1732000D99724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E442D8302CA1732000D99724 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E442D80A2CA1731F00D99724 = {
+			isa = PBXGroup;
+			children = (
+				E442D8152CA1731F00D99724 /* Rick & Roll */,
+				E442D82C2CA1732000D99724 /* Rick & RollTests */,
+				E442D8362CA1732000D99724 /* Rick & RollUITests */,
+				E442D8142CA1731F00D99724 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E442D8142CA1731F00D99724 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E442D8132CA1731F00D99724 /* Rick & Roll.app */,
+				E442D8292CA1732000D99724 /* Rick & RollTests.xctest */,
+				E442D8332CA1732000D99724 /* Rick & RollUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E442D8122CA1731F00D99724 /* Rick & Roll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E442D83C2CA1732000D99724 /* Build configuration list for PBXNativeTarget "Rick & Roll" */;
+			buildPhases = (
+				E442D80F2CA1731F00D99724 /* Sources */,
+				E442D8102CA1731F00D99724 /* Frameworks */,
+				E442D8112CA1731F00D99724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E442D8152CA1731F00D99724 /* Rick & Roll */,
+			);
+			name = "Rick & Roll";
+			packageProductDependencies = (
+				E442D8482CA1736B00D99724 /* RxCocoa */,
+				E442D84A2CA1736B00D99724 /* RxSwift */,
+			);
+			productName = "Rick & Roll";
+			productReference = E442D8132CA1731F00D99724 /* Rick & Roll.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E442D8282CA1732000D99724 /* Rick & RollTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E442D8412CA1732000D99724 /* Build configuration list for PBXNativeTarget "Rick & RollTests" */;
+			buildPhases = (
+				E442D8252CA1732000D99724 /* Sources */,
+				E442D8262CA1732000D99724 /* Frameworks */,
+				E442D8272CA1732000D99724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E442D82B2CA1732000D99724 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E442D82C2CA1732000D99724 /* Rick & RollTests */,
+			);
+			name = "Rick & RollTests";
+			packageProductDependencies = (
+			);
+			productName = "Rick & RollTests";
+			productReference = E442D8292CA1732000D99724 /* Rick & RollTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E442D8322CA1732000D99724 /* Rick & RollUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E442D8442CA1732000D99724 /* Build configuration list for PBXNativeTarget "Rick & RollUITests" */;
+			buildPhases = (
+				E442D82F2CA1732000D99724 /* Sources */,
+				E442D8302CA1732000D99724 /* Frameworks */,
+				E442D8312CA1732000D99724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E442D8352CA1732000D99724 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E442D8362CA1732000D99724 /* Rick & RollUITests */,
+			);
+			name = "Rick & RollUITests";
+			packageProductDependencies = (
+			);
+			productName = "Rick & RollUITests";
+			productReference = E442D8332CA1732000D99724 /* Rick & RollUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E442D80B2CA1731F00D99724 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					E442D8122CA1731F00D99724 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					E442D8282CA1732000D99724 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = E442D8122CA1731F00D99724;
+					};
+					E442D8322CA1732000D99724 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = E442D8122CA1731F00D99724;
+					};
+				};
+			};
+			buildConfigurationList = E442D80E2CA1731F00D99724 /* Build configuration list for PBXProject "Rick & Roll" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E442D80A2CA1731F00D99724;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E442D8472CA1736B00D99724 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E442D8142CA1731F00D99724 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E442D8122CA1731F00D99724 /* Rick & Roll */,
+				E442D8282CA1732000D99724 /* Rick & RollTests */,
+				E442D8322CA1732000D99724 /* Rick & RollUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E442D8112CA1731F00D99724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E442D8272CA1732000D99724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E442D8312CA1732000D99724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E442D80F2CA1731F00D99724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E442D8252CA1732000D99724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E442D82F2CA1732000D99724 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E442D82B2CA1732000D99724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E442D8122CA1731F00D99724 /* Rick & Roll */;
+			targetProxy = E442D82A2CA1732000D99724 /* PBXContainerItemProxy */;
+		};
+		E442D8352CA1732000D99724 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E442D8122CA1731F00D99724 /* Rick & Roll */;
+			targetProxy = E442D8342CA1732000D99724 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E442D83D2CA1732000D99724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79UA548H4L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Rick & Roll/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emtech.Rick---Roll";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E442D83E2CA1732000D99724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79UA548H4L;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Rick & Roll/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emtech.Rick---Roll";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E442D83F2CA1732000D99724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E442D8402CA1732000D99724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E442D8422CA1732000D99724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79UA548H4L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emtech.Rick---RollTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rick & Roll.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rick & Roll";
+			};
+			name = Debug;
+		};
+		E442D8432CA1732000D99724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79UA548H4L;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emtech.Rick---RollTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rick & Roll.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rick & Roll";
+			};
+			name = Release;
+		};
+		E442D8452CA1732000D99724 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79UA548H4L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emtech.Rick---RollUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Rick & Roll";
+			};
+			name = Debug;
+		};
+		E442D8462CA1732000D99724 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79UA548H4L;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.emtech.Rick---RollUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Rick & Roll";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E442D80E2CA1731F00D99724 /* Build configuration list for PBXProject "Rick & Roll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E442D83F2CA1732000D99724 /* Debug */,
+				E442D8402CA1732000D99724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E442D83C2CA1732000D99724 /* Build configuration list for PBXNativeTarget "Rick & Roll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E442D83D2CA1732000D99724 /* Debug */,
+				E442D83E2CA1732000D99724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E442D8412CA1732000D99724 /* Build configuration list for PBXNativeTarget "Rick & RollTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E442D8422CA1732000D99724 /* Debug */,
+				E442D8432CA1732000D99724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E442D8442CA1732000D99724 /* Build configuration list for PBXNativeTarget "Rick & RollUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E442D8452CA1732000D99724 /* Debug */,
+				E442D8462CA1732000D99724 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E442D8472CA1736B00D99724 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E442D8482CA1736B00D99724 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E442D8472CA1736B00D99724 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		E442D84A2CA1736B00D99724 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E442D8472CA1736B00D99724 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E442D80B2CA1731F00D99724 /* Project object */;
+}
