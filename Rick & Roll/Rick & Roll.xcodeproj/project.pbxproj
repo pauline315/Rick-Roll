@@ -22,6 +22,7 @@
 		65F049052CA29B600099D115 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F049042CA29B600099D115 /* Model.swift */; };
 		65F049072CA29B870099D115 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F049062CA29B870099D115 /* ViewModel.swift */; };
 		65F049092CA29BA00099D115 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F049082CA29BA00099D115 /* Components.swift */; };
+		6A366A0E2CA2F96B00BD70B1 /* RickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A366A0D2CA2F96B00BD70B1 /* RickTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		65F049042CA29B600099D115 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		65F049062CA29B870099D115 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		65F049082CA29BA00099D115 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		6A366A0D2CA2F96B00BD70B1 /* RickTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				65F049082CA29BA00099D115 /* Components.swift */,
+				6A366A0D2CA2F96B00BD70B1 /* RickTableViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				65F049092CA29BA00099D115 /* Components.swift in Sources */,
 				650553352CA297A800B19BDA /* SceneDelegate.swift in Sources */,
 				65F049072CA29B870099D115 /* ViewModel.swift in Sources */,
+				6A366A0E2CA2F96B00BD70B1 /* RickTableViewCell.swift in Sources */,
 				65A621DA2CA2E2B3005F4DA4 /* ApiService.swift in Sources */,
 				6505533D2CA297A800B19BDA /* Rick___Roll.xcdatamodeld in Sources */,
 			);
