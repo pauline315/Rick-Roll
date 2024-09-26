@@ -9,6 +9,7 @@ import UIKit
 
 class CharacterDetailsViewController: UIViewController {
     
+    var character: Character? // Add this property
     var characterImage = UIImageView()
     var characterName  = UILabel()
     var characterGender = UILabel()
@@ -20,8 +21,14 @@ class CharacterDetailsViewController: UIViewController {
         super.viewDidLoad()
         setUpUIComponents()
         
+        // Update UI with character data if available
+        if let character = character {
+            characterName.text = character.name
+            characterSpecies.text = character.species
+            characterImage.setImageFromURL(url: character.image)
+            // Update other UI elements as needed
+        }
     }
-    
     
     private func setUpUIComponents(){
         view.addSubview(characterImage)
@@ -31,35 +38,20 @@ class CharacterDetailsViewController: UIViewController {
         view.addSubview(characterHome)
         view.addSubview(characterStatus)
         
-        
         characterImage.layer.cornerRadius = 40
         characterImage.backgroundColor = .systemPink
-        characterImage.image = UIImage(systemName: "star")
         characterImage.translatesAutoresizingMaskIntoConstraints = false
         
-        //name label
-        characterName.text = "Zephyr"
+        // Labels setup
         characterName.font = .systemFont(ofSize: 26, weight: .bold)
         characterName.translatesAutoresizingMaskIntoConstraints = false
-        // species
-        characterSpecies.text = "Elf"
-        characterSpecies.translatesAutoresizingMaskIntoConstraints = false
-        // gender
         
-        characterGender.text = ". Male"
+        characterSpecies.translatesAutoresizingMaskIntoConstraints = false
         characterGender.textColor = .systemGray
         characterGender.translatesAutoresizingMaskIntoConstraints = false
-        //location
         
-        characterHome.text = "Location : Earth"
         characterHome.translatesAutoresizingMaskIntoConstraints = false
-        //status
-        characterStatus.text = "status"
         characterStatus.translatesAutoresizingMaskIntoConstraints = false
-        characterStatus.backgroundColor = .systemCyan
-        
-        
-        
         
         NSLayoutConstraint.activate([
             characterImage.heightAnchor.constraint(equalToConstant: 400),
@@ -70,7 +62,6 @@ class CharacterDetailsViewController: UIViewController {
             characterName.topAnchor.constraint(equalTo: characterImage.bottomAnchor, constant: 30),
             
             characterSpecies.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            
             characterSpecies.topAnchor.constraint(equalTo: characterName.bottomAnchor, constant: 4),
             
             characterGender.leadingAnchor.constraint(equalTo: characterSpecies.trailingAnchor, constant: 8),
@@ -80,18 +71,7 @@ class CharacterDetailsViewController: UIViewController {
             characterHome.topAnchor.constraint(equalTo: characterSpecies.bottomAnchor, constant: 20),
             
             characterStatus.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            characterStatus.bottomAnchor.constraint(equalTo: characterName.bottomAnchor),
-           
-        
+            characterStatus.bottomAnchor.constraint(equalTo: characterName.bottomAnchor)
         ])
-              
-        
-        
     }
-    
-    
-
-}
-#Preview{
-    CharacterDetailsViewController()
 }
