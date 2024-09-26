@@ -14,5 +14,14 @@ class APIService {
                 if let error = error {
                     observer.onError(error)
                 } else if let data = data {
+                     do {
+                        let characterData = try JSONDecoder().decode(CharacterData.self, from: data)
+                        observer.onNext(characterData)
+                        observer.onCompleted()
+                    } catch let jsonError {
+                        observer.onError(jsonError)
+                    }
+                }
+            }
 
 
