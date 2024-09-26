@@ -23,5 +23,12 @@ class APIService {
                     }
                 }
             }
+                                    task.resume()
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+    }
+}
 
 
