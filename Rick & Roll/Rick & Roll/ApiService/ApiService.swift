@@ -6,5 +6,8 @@
 //
 
 import Foundation
+class APIService {
+    func fetchCharacters(page: Int) -> Observable<CharacterData> {
+        let url = URL(string: "https://rickandmortyapi.com/api/character?page=\(page)")!
 
 
