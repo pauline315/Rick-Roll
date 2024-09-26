@@ -9,5 +9,10 @@ import Foundation
 class APIService {
     func fetchCharacters(page: Int) -> Observable<CharacterData> {
         let url = URL(string: "https://rickandmortyapi.com/api/character?page=\(page)")!
+         return Observable.create { observer in
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    observer.onError(error)
+                } else if let data = data {
 
 
