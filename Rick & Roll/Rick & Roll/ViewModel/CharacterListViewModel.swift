@@ -24,5 +24,12 @@ class CharacterListViewModel {
         fetchCharacters()
         setupSearch()
     }
+     func fetchCharacters() {
+        apiService.fetchCharacters(page: currentPage)
+            .subscribe(onNext: { [weak self] data in
+                self?.characters.accept(data.results)
+            })
+            .disposed(by: disposeBag)
+    }
 
     
