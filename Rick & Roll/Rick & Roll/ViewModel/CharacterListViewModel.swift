@@ -13,3 +13,6 @@ class CharacterListViewModel {
     private let disposeBag = DisposeBag()
     private let apiService: APIService
     private let coordinator: MainCoordinator
+     let characters = BehaviorRelay<[Character]>(value: [])
+    let searchQuery = BehaviorRelay<String>(value: "")
+    
