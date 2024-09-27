@@ -31,5 +31,9 @@ class CharacterListViewModel {
             })
             .disposed(by: disposeBag)
     }
+    private func setupSearch() {
+        searchQuery.asObservable()
+            .subscribe(onNext: { [weak self] query in
+                if query.isEmpty {
 
     
