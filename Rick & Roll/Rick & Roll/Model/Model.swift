@@ -17,6 +17,8 @@ struct Character: Codable {
     let species: String
     let status: String
     let image: String
+    let gender : String
+    let location : planet
 }
 
 struct CharacterData: Codable {
@@ -27,4 +29,8 @@ struct CharacterData: Codable {
 struct PageInfo: Codable {
     let next: String?
     let prev: String?
+}
+
+struct planet : Codable{
+    let name:String
 }
