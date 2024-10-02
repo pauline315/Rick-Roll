@@ -23,7 +23,7 @@ class MainCoordinator {
     func showCharacterDetails(character: Character) {
         let detailVC = CharacterDetailsViewController()
         // Pass character data to the detail view controller
-        //detailVC.character = character
+        detailVC.character = character
         navigationController.pushViewController(detailVC, animated: true)
     }
 }
