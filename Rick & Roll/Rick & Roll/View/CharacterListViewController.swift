@@ -8,7 +8,7 @@ class CharacterListViewController: UIViewController {
     private var coordinator: MainCoordinator!
 
     private var tableView: UITableView!
-    private let searchBar = UISearchBar()
+    private let statusFilterControl = UISegmentedControl(items: ["Alive", "Dead", "Unknown"])
 
     // Initialize with coordinator
     init(coordinator: MainCoordinator) {
@@ -29,10 +29,15 @@ class CharacterListViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .systemBackground
         title = "Characters"
+
+        // Customize segmented control appearance
+        statusFilterControl.selectedSegmentIndex = 0
+        statusFilterControl.backgroundColor = .clear
+        statusFilterControl.selectedSegmentTintColor = .systemPurple
+        statusFilterControl.setTitleTextAttributes([.foregroundColor: UIColor.systemPurple], for: .normal)
+        statusFilterControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         
-        // Search Bar setup
-        searchBar.placeholder = "Search by status (alive, dead, unknown)"
-        view.addSubview(searchBar)
+        view.addSubview(statusFilterControl)
         
         // TableView setup
         tableView = UITableView()
@@ -41,14 +46,14 @@ class CharacterListViewController: UIViewController {
         view.addSubview(tableView)
         
         // Layout constraints
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        statusFilterControl.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            statusFilterControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            statusFilterControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            statusFilterControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: statusFilterControl.bottomAnchor, constant: 10),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -73,10 +78,20 @@ class CharacterListViewController: UIViewController {
             })
             .disposed(by: disposeBag)
 
-        // Bind search text to filter characters
-        searchBar.rx.text.orEmpty
-            .distinctUntilChanged()
-            .bind(to: viewModel.searchQuery)
+        // Bind status filter control to filter characters
+        statusFilterControl.rx.selectedSegmentIndex
+            .map { index -> String in
+                switch index {
+                case 0: return "alive"
+                case 1: return "dead"
+                case 2: return "unknown"
+                default: return ""
+                }
+            }
+            .subscribe(onNext: { [weak self] status in
+                // Inform the ViewModel to filter characters based on the selected status
+                self?.viewModel.filterCharacters(byStatus: status)
+            })
             .disposed(by: disposeBag)
 
         // Infinite scrolling: Load more characters when reaching the bottom
