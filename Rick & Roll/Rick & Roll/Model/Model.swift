@@ -9,7 +9,9 @@ import Foundation
 import RxSwift
 
 
-
+struct CharacterResponse: Codable {
+    let results: [Character]
+}
 
 struct Character: Codable {
     let id: Int
@@ -34,3 +36,4 @@ struct PageInfo: Codable {
 struct planet : Codable{
     let name:String
 }
+

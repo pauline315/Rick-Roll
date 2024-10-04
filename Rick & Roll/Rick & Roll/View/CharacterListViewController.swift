@@ -27,7 +27,7 @@ class CharacterListViewController: UIViewController {
     }
 
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         title = "Characters"
         
         // Search Bar setup
@@ -77,6 +77,21 @@ class CharacterListViewController: UIViewController {
         searchBar.rx.text.orEmpty
             .distinctUntilChanged()
             .bind(to: viewModel.searchQuery)
+            .disposed(by: disposeBag)
+
+        // Infinite scrolling: Load more characters when reaching the bottom
+        tableView.rx.contentOffset
+            .subscribe(onNext: { [weak self] offset in
+                guard let self = self else { return }
+                
+                let contentHeight = self.tableView.contentSize.height
+                let tableViewHeight = self.tableView.frame.size.height
+                let scrollOffsetThreshold = contentHeight - tableViewHeight
+                
+                if offset.y > scrollOffsetThreshold && self.tableView.isDragging {
+                    self.viewModel.loadMoreCharacters()  // Trigger loading the next page
+                }
+            })
             .disposed(by: disposeBag)
     }
 }

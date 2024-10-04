@@ -9,27 +9,27 @@ import Foundation
 import RxSwift
 
 class APIService {
-    func fetchCharacters(page: Int) -> Observable<CharacterData> {
-        let url = URL(string: "https://rickandmortyapi.com/api/character?page=\(page)")!
-         return Observable.create { observer in
-
+    func fetchCharacters(page: Int, pageSize: Int) -> Observable<CharacterData> {
+        let urlString = "https://rickandmortyapi.com/api/character?page=\(page)"
+        guard let url = URL(string: urlString) else {
+            return Observable.error(NSError(domain: "Invalid URL", code: -1, userInfo: nil))
+        }
+        
+        return Observable.create { observer in
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 if let error = error {
                     observer.onError(error)
                 } else if let data = data {
-
-                     do {
-
-                        let characterData = try JSONDecoder().decode(CharacterData.self, from: data)
-                        observer.onNext(characterData)
+                    do {
+                        let decodedResponse = try JSONDecoder().decode(CharacterData.self, from: data)
+                        observer.onNext(decodedResponse)  
                         observer.onCompleted()
                     } catch let jsonError {
                         observer.onError(jsonError)
                     }
                 }
             }
-
-                                    task.resume()
+            task.resume()
 
             return Disposables.create {
                 task.cancel()
@@ -37,7 +37,3 @@ class APIService {
         }
     }
 }
-
-
-
-
