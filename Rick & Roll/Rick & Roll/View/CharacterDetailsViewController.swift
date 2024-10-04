@@ -54,7 +54,6 @@ class CharacterDetailsViewController: UIViewController {
     }
     
     private func setUpUIComponents(){
-        view.addSubview(characterImage)
         view.addSubview(characterName)
         view.addSubview(characterGender)
         view.addSubview(characterSpecies)
@@ -63,6 +62,7 @@ class CharacterDetailsViewController: UIViewController {
         view.addSubview(location)
         
         characterImage.layer.cornerRadius = 40
+        view.addSubview(characterImage)
         characterImage.backgroundColor = .systemPink
         characterImage.translatesAutoresizingMaskIntoConstraints = false
         

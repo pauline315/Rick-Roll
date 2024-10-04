@@ -1,34 +1,38 @@
 import UIKit
 
 class RickTableViewCell: UITableViewCell {
-    static let cellId = "characterCell"
+    static let cellId = "RickTableViewCell"
     
+    // UI Elements
     var characterName = UILabel()
     var characterSpecies = UILabel()
     var characterImage = UIImageView()
 
+    // Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setCellUi() // Call this to setup UI components when the cell is initialized
+        setupUI() // Call this to set up the cell UI components
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // This method binds the character data to the UI components
+    // Bind character data to the UI elements
     func bindCellData(character: Character) {
         characterName.text = character.name
         characterSpecies.text = character.species
-        characterImage.loadImage(urlString: character.image)
+        characterImage.loadImage(urlString: character.image) // Load images from URL using extension
     }
     
     // Private function to setup the cell UI
-    private func setCellUi() {
-        addSubview(characterName)
-        addSubview(characterSpecies)
-        addSubview(characterImage)
+    private func setupUI() {
+        // Add subviews to the content view of the cell
+        contentView.addSubview(characterName)
+        contentView.addSubview(characterSpecies)
+        contentView.addSubview(characterImage)
         
+        // Configure the UI elements
         characterName.font = .systemFont(ofSize: 28, weight: .bold)
         characterName.translatesAutoresizingMaskIntoConstraints = false
         
@@ -39,11 +43,11 @@ class RickTableViewCell: UITableViewCell {
         characterImage.clipsToBounds = true
         characterImage.translatesAutoresizingMaskIntoConstraints = false
         
-        // Setting constraints for the UI elements
+        // Add constraints to position the UI elements within the cell
         NSLayoutConstraint.activate([
             // Image constraints
-            characterImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            characterImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            characterImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            characterImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             characterImage.heightAnchor.constraint(equalToConstant: 120),
             characterImage.widthAnchor.constraint(equalToConstant: 120),
             
