@@ -9,8 +9,8 @@ import Foundation
 import RxSwift
 
 class APIService {
-    func fetchCharacters(status: String, page: Int, pageSize: Int) -> Observable<CharacterData> {
-        let urlString = "https://rickandmortyapi.com/api/character?status=\(status)&page=\(page)&pageSize=\(pageSize)"
+    func fetchCharacters(status: String?, page: Int, pageSize: Int) -> Observable<CharacterData> {
+        let urlString = "https://rickandmortyapi.com/api/character?status=\(status ?? "")&page=\(page)&pageSize=\(pageSize)"
         guard let url = URL(string: urlString) else {
             return Observable.error(NSError(domain: "Invalid URL", code: -1, userInfo: nil))
         }
