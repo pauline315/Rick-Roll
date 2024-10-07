@@ -12,6 +12,7 @@ class RickTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI() // Call this to set up the cell UI components
+        setupCellAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -19,10 +20,22 @@ class RickTableViewCell: UITableViewCell {
     }
     
     // Bind character data to the UI elements
-    func bindCellData(character: Character) {
+    func bindCellData(character: Character, isAlternate: Bool) {
         characterName.text = character.name
         characterSpecies.text = character.species
         characterImage.loadImage(urlString: character.image) // Load images from URL using extension
+        
+        // Alternate the background color
+        contentView.backgroundColor = isAlternate ? UIColor(red: 83/255.0, green: 181/255.0, blue: 195/255.0, alpha: 0.1) : UIColor(red: 83/255.0, green: 181/255.0, blue: 195/255.0, alpha: 0.35)
+    }
+    
+    private func setupCellAppearance() {
+        contentView.layer.cornerRadius = 15
+        contentView.layer.masksToBounds = false
+        contentView.layer.shadowColor = UIColor.black.cgColor
+        contentView.layer.shadowOpacity = 0.2
+        contentView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        contentView.layer.shadowRadius = 5
     }
     
     // Private function to setup the cell UI

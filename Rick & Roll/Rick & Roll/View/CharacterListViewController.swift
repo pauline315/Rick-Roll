@@ -35,8 +35,8 @@ class CharacterListViewController: UIViewController {
         // Customize segmented control appearance
         statusFilterControl.selectedSegmentIndex = UISegmentedControl.noSegment // No segment selected initially
         statusFilterControl.backgroundColor = .clear
-        statusFilterControl.selectedSegmentTintColor = .systemPurple
-        statusFilterControl.setTitleTextAttributes([.foregroundColor: UIColor.systemPurple], for: .normal)
+        statusFilterControl.selectedSegmentTintColor = .systemBlue
+        statusFilterControl.setTitleTextAttributes([.foregroundColor: UIColor.systemBlue], for: .normal)
         statusFilterControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
         
         view.addSubview(statusFilterControl)
@@ -69,7 +69,8 @@ class CharacterListViewController: UIViewController {
         // Bind characters to the tableView
         viewModel.characters
             .bind(to: tableView.rx.items(cellIdentifier: RickTableViewCell.cellId, cellType: RickTableViewCell.self)) { index, character, cell in
-                cell.bindCellData(character: character)
+                let isAlternate = index % 2 == 1
+                cell.bindCellData(character: character, isAlternate: isAlternate)
             }
             .disposed(by: disposeBag)
 
