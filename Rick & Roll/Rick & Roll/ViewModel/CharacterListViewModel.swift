@@ -16,7 +16,7 @@ class CharacterListViewModel {
     
     // Output
     let characters = BehaviorRelay<[Character]>(value: [])
-    let searchQuery = BehaviorRelay<String>(value: "alive")  // Default to "alive"
+    let searchQuery = BehaviorRelay<String>(value: "")  // Initialize to empty for no search
     
     // Pagination properties
     private var currentPage = 1
@@ -25,13 +25,13 @@ class CharacterListViewModel {
     private var canLoadMore = true
     
     // Status filter
-    private var selectedStatus = "alive"
+    private var selectedStatus: String = "" // No filter initially
 
     init(apiService: APIService = APIService(), coordinator: MainCoordinator) {
         self.apiService = apiService
         self.coordinator = coordinator
         setupSearch()  // Set up search functionality
-        fetchCharactersFiltered(by: selectedStatus)  // Fetch characters by default status
+        fetchCharactersFiltered(by: selectedStatus)  // Fetch all characters initially
     }
 
     // Fetch characters with status filtering and pagination support
@@ -39,7 +39,8 @@ class CharacterListViewModel {
         guard !isLoading && canLoadMore else { return }  // Prevent duplicate requests
         isLoading = true
         
-        apiService.fetchCharacters(status: status, page: currentPage, pageSize: pageSize)
+        // Pass `nil` or empty string to fetch all characters
+        apiService.fetchCharacters(status: status.isEmpty ? nil : status, page: currentPage, pageSize: pageSize)
             .subscribe(onNext: { [weak self] data in
                 guard let self = self else { return }
                 
@@ -70,11 +71,12 @@ class CharacterListViewModel {
                 // Reset pagination and fetch characters based on search query and status
                 self.currentPage = 1
                 self.characters.accept([])  // Clear existing data
+                self.canLoadMore = true  // Reset load more flag
                 
-                if query.isEmpty {
-                    self.fetchCharactersFiltered(by: self.selectedStatus)  // Fetch the first page again by status
-                } else {
-                    // Filter the currently loaded characters by search query
+                self.fetchCharactersFiltered(by: self.selectedStatus)  // Fetch based on current status
+
+                if !query.isEmpty {
+                    // Further filter the fetched characters by search query
                     let filteredCharacters = self.characters.value.filter {
                         $0.name.lowercased().contains(query.lowercased()) || $0.status.lowercased().contains(query.lowercased())
                     }
@@ -90,6 +92,7 @@ class CharacterListViewModel {
         searchQuery.accept("")  // Clear any existing search term
         currentPage = 1
         characters.accept([])  // Reset characters list
+        canLoadMore = true  // Reset load more flag
         fetchCharactersFiltered(by: status)  // Fetch new characters based on the status
     }
 

@@ -9,6 +9,8 @@ class CharacterListViewController: UIViewController {
 
     private var tableView: UITableView!
     private let statusFilterControl = UISegmentedControl(items: ["Alive", "Dead", "Unknown"])
+    private var lastSelectedSegmentIndex: Int = UISegmentedControl.noSegment
+
 
     // Initialize with coordinator
     init(coordinator: MainCoordinator) {
@@ -31,7 +33,7 @@ class CharacterListViewController: UIViewController {
         title = "Characters"
 
         // Customize segmented control appearance
-        statusFilterControl.selectedSegmentIndex = 0
+        statusFilterControl.selectedSegmentIndex = UISegmentedControl.noSegment // No segment selected initially
         statusFilterControl.backgroundColor = .clear
         statusFilterControl.selectedSegmentTintColor = .systemPurple
         statusFilterControl.setTitleTextAttributes([.foregroundColor: UIColor.systemPurple], for: .normal)
@@ -78,21 +80,39 @@ class CharacterListViewController: UIViewController {
             })
             .disposed(by: disposeBag)
 
-        // Bind status filter control to filter characters
+        // Initialize lastSelectedSegmentIndex to noSegment
+        lastSelectedSegmentIndex = UISegmentedControl.noSegment
+
+        // Bind status filter control to filter characters with toggle behavior
         statusFilterControl.rx.selectedSegmentIndex
-            .map { index -> String in
-                switch index {
-                case 0: return "alive"
-                case 1: return "dead"
-                case 2: return "unknown"
-                default: return ""
+            .skip(1) // Skip the initial value to prevent triggering on view load
+            .subscribe(onNext: { [weak self] selectedIndex in
+                guard let self = self else { return }
+                
+                if selectedIndex == self.lastSelectedSegmentIndex {
+                    // Deselect the segment if the same one is tapped
+                    self.statusFilterControl.selectedSegmentIndex = UISegmentedControl.noSegment
+                    self.lastSelectedSegmentIndex = UISegmentedControl.noSegment
+                    self.viewModel.filterCharacters(byStatus: "") // Show all characters
+                } else {
+                    // Select the new segment and update the filter
+                    self.lastSelectedSegmentIndex = selectedIndex
+                    let status: String
+                    switch selectedIndex {
+                    case 0:
+                        status = "alive"
+                    case 1:
+                        status = "dead"
+                    case 2:
+                        status = "unknown"
+                    default:
+                        status = ""
+                    }
+                    self.viewModel.filterCharacters(byStatus: status)
                 }
-            }
-            .subscribe(onNext: { [weak self] status in
-                // Inform the ViewModel to filter characters based on the selected status
-                self?.viewModel.filterCharacters(byStatus: status)
             })
             .disposed(by: disposeBag)
+
 
         // Infinite scrolling: Load more characters when reaching the bottom
         tableView.rx.contentOffset
