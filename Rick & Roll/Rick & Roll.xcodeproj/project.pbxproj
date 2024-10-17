@@ -20,10 +20,9 @@
 		65F049092CA29BA00099D115 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F049082CA29BA00099D115 /* Components.swift */; };
 		6A366A0E2CA2F96B00BD70B1 /* RickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A366A0D2CA2F96B00BD70B1 /* RickTableViewCell.swift */; };
 		6A8765672CA43DF000F86455 /* CharacterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8765662CA43DF000F86455 /* CharacterDetailsViewController.swift */; };
+		6A99E7522CC1033F003D0D61 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 6A99E7512CC1033F003D0D61 /* RxCocoa */; };
+		6A99E7542CC1033F003D0D61 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6A99E7532CC1033F003D0D61 /* RxSwift */; };
 		6AAFBAE72CA3F8C8007DFCFD /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAFBAE62CA3F8C8007DFCFD /* ImageDownloader.swift */; };
-		E46435CC2CB403BB00442B8E /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = E46435CB2CB403BB00442B8E /* RxBlocking */; };
-		E46435CE2CB403BB00442B8E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E46435CD2CB403BB00442B8E /* RxCocoa */; };
-		E46435D02CB403BB00442B8E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E46435CF2CB403BB00442B8E /* RxRelay */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46435D02CB403BB00442B8E /* RxRelay in Frameworks */,
-				E46435CE2CB403BB00442B8E /* RxCocoa in Frameworks */,
-				E46435CC2CB403BB00442B8E /* RxBlocking in Frameworks */,
+				6A99E7542CC1033F003D0D61 /* RxSwift in Frameworks */,
+				6A99E7522CC1033F003D0D61 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,9 +168,8 @@
 			);
 			name = "Rick & Roll";
 			packageProductDependencies = (
-				E46435CB2CB403BB00442B8E /* RxBlocking */,
-				E46435CD2CB403BB00442B8E /* RxCocoa */,
-				E46435CF2CB403BB00442B8E /* RxRelay */,
+				6A99E7512CC1033F003D0D61 /* RxCocoa */,
+				6A99E7532CC1033F003D0D61 /* RxSwift */,
 			);
 			productName = "Rick & Roll";
 			productReference = 6505532F2CA297A800B19BDA /* Rick & Roll.app */;
@@ -203,7 +200,7 @@
 			);
 			mainGroup = 650553262CA297A800B19BDA;
 			packageReferences = (
-				E46435CA2CB403BB00442B8E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				6A99E7502CC1033E003D0D61 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 650553302CA297A800B19BDA /* Products */;
 			projectDirPath = "";
@@ -457,7 +454,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E46435CA2CB403BB00442B8E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		6A99E7502CC1033E003D0D61 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -468,20 +465,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E46435CB2CB403BB00442B8E /* RxBlocking */ = {
+		6A99E7512CC1033F003D0D61 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E46435CA2CB403BB00442B8E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		E46435CD2CB403BB00442B8E /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E46435CA2CB403BB00442B8E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 6A99E7502CC1033E003D0D61 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		E46435CF2CB403BB00442B8E /* RxRelay */ = {
+		6A99E7532CC1033F003D0D61 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E46435CA2CB403BB00442B8E /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
+			package = 6A99E7502CC1033E003D0D61 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

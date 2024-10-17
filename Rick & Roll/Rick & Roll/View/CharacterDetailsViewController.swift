@@ -9,7 +9,7 @@ import UIKit
 
 class CharacterDetailsViewController: UIViewController {
     
-    var character: Character? // Add this property
+    var character: Character?
     var characterImage = UIImageView()
     var characterName  = UILabel()
     var characterGender = UILabel()
@@ -23,6 +23,7 @@ class CharacterDetailsViewController: UIViewController {
         super.viewDidLoad()
         setUpUIComponents()
         setData()
+        view.backgroundColor = .white
                 
     
     func setData(){
