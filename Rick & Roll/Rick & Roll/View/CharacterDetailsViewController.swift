@@ -17,13 +17,13 @@ class CharacterDetailsViewController: UIViewController {
     var characterHome  = UILabel()
     var characterStatus = UILabel()
     var location       = UILabel()
+    var backButton    = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUIComponents()
         setData()
-        view.backgroundColor = .systemBackground
-        
+                
     
     func setData(){
         if let character = character {
@@ -36,11 +36,13 @@ class CharacterDetailsViewController: UIViewController {
             
             statusColor(status: character.status)
             
+            
         }
     }
         
     }
-    
+        
+      
     private func statusColor(status: String){
         switch status{
         case "Dead" : characterStatus.textColor = .systemPink
@@ -54,15 +56,19 @@ class CharacterDetailsViewController: UIViewController {
     }
     
     private func setUpUIComponents(){
-        view.addSubview(characterImage)
         view.addSubview(characterName)
         view.addSubview(characterGender)
         view.addSubview(characterSpecies)
         view.addSubview(characterHome)
         view.addSubview(characterStatus)
         view.addSubview(location)
+        view.addSubview(backButton)
+        
+        backButton.image = UIImage(systemName: "star.fill")
+        backButton.translatesAutoresizingMaskIntoConstraints = false
         
         characterImage.layer.cornerRadius = 40
+        view.addSubview(characterImage)
         characterImage.backgroundColor = .systemPink
         characterImage.translatesAutoresizingMaskIntoConstraints = false
         
@@ -103,7 +109,12 @@ class CharacterDetailsViewController: UIViewController {
             location.topAnchor.constraint(equalTo: characterSpecies.bottomAnchor, constant: 20),
             
             characterStatus.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            characterStatus.bottomAnchor.constraint(equalTo: characterName.bottomAnchor)
+            characterStatus.bottomAnchor.constraint(equalTo: characterName.bottomAnchor),
+            
         ])
     }
+}
+
+#Preview{
+    CharacterDetailsViewController()
 }

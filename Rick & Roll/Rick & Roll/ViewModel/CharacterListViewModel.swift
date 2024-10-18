@@ -14,26 +14,114 @@ class CharacterListViewModel {
     private let apiService: APIService
     private let coordinator: MainCoordinator
     
+    // Output
     let characters = BehaviorRelay<[Character]>(value: [])
+<<<<<<< HEAD
     let searchQuery = BehaviorRelay<String>(value: "")
      private var currentPage = 1
+=======
+    let searchQuery = BehaviorRelay<String>(value: "")  // Initialize to empty for no search
+    
+    // Pagination properties
+    private var currentPage = 1
+    private let pageSize = 20
+    private var isLoading = false
+    private var canLoadMore = true
+    
+    // Status filter
+    private var selectedStatus: String = "" // No filter initially
+>>>>>>> main
 
     init(apiService: APIService = APIService(), coordinator: MainCoordinator) {
         self.apiService = apiService
         self.coordinator = coordinator
-        fetchCharacters()
-        setupSearch()
+        setupSearch()  // Set up search functionality
+        fetchCharactersFiltered(by: selectedStatus)  // Fetch all characters initially
     }
+<<<<<<< HEAD
      func fetchCharacters() {
         apiService.fetchCharacters(page: currentPage)
+=======
+
+    // Fetch characters with status filtering and pagination support
+    private func fetchCharactersFiltered(by status: String) {
+        guard !isLoading && canLoadMore else { return }  // Prevent duplicate requests
+        isLoading = true
+        
+        // Pass `nil` or empty string to fetch all characters
+        apiService.fetchCharacters(status: status.isEmpty ? nil : status, page: currentPage, pageSize: pageSize)
+>>>>>>> main
             .subscribe(onNext: { [weak self] data in
-                self?.characters.accept(data.results)
+                guard let self = self else { return }
+                
+                let newCharacters = data.results  // Access the results property here
+                let updatedCharacters = self.currentPage == 1 ? newCharacters : self.characters.value + newCharacters
+                
+                self.characters.accept(updatedCharacters)  // Append new data
+                
+                // Update pagination state
+                self.currentPage += 1
+                self.canLoadMore = newCharacters.count == self.pageSize  // Stop if fewer than pageSize are returned
+                self.isLoading = false
+            }, onError: { [weak self] error in
+                print("Error fetching characters: \(error)")
+                self?.isLoading = false
             })
             .disposed(by: disposeBag)
     }
+<<<<<<< HEAD
+=======
+
+    // Setup search and filtering logic
+>>>>>>> main
     private func setupSearch() {
-        searchQuery.asObservable()
+        searchQuery
+            .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
             .subscribe(onNext: { [weak self] query in
+<<<<<<< HEAD
                 if query.isEmpty {
 
     
+=======
+                guard let self = self else { return }
+                
+                // Reset pagination and fetch characters based on search query and status
+                self.currentPage = 1
+                self.characters.accept([])  // Clear existing data
+                self.canLoadMore = true  // Reset load more flag
+                
+                self.fetchCharactersFiltered(by: self.selectedStatus)  // Fetch based on current status
+
+                if !query.isEmpty {
+                    // Further filter the fetched characters by search query
+                    let filteredCharacters = self.characters.value.filter {
+                        $0.name.lowercased().contains(query.lowercased()) || $0.status.lowercased().contains(query.lowercased())
+                    }
+                    self.characters.accept(filteredCharacters)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    // Function to handle status filter selection
+    func filterCharacters(byStatus status: String) {
+        selectedStatus = status
+        searchQuery.accept("")  // Clear any existing search term
+        currentPage = 1
+        characters.accept([])  // Reset characters list
+        canLoadMore = true  // Reset load more flag
+        fetchCharactersFiltered(by: status)  // Fetch new characters based on the status
+    }
+
+    // Function to handle character selection
+    func didSelectCharacter(_ character: Character) {
+        coordinator.showCharacterDetails(character: character)
+    }
+
+    // Function to load more characters (triggered when scrolling to the bottom)
+    func loadMoreCharacters() {
+        fetchCharactersFiltered(by: selectedStatus)
+    }
+}
+>>>>>>> main

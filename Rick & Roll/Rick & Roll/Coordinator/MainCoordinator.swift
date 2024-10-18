@@ -25,5 +25,7 @@ class MainCoordinator {
         // Pass character data to the detail view controller
         detailVC.character = character
         navigationController.pushViewController(detailVC, animated: true)
+       
     }
 }
+//navigationController.navigationBar.isHidden = true
